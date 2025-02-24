@@ -12,8 +12,8 @@ class testData:                               #all data belonging to a particula
     # providing data from excel.
     @staticmethod          #declaring static method to call the method directly via class without object creation.
     def exceldata(testcase_name):  #static methods don't use self.
-        book = openpyxl.load_workbook("../Test_Data/Excel_data.xlsx")  # importing excel file
-        sheet = book.active  # selecting active sheet
+        book = openpyxl.load_workbook("C:\\Users\Lenovo\.jenkins\workspace\Git_CICD_Python_Selenium\Test_Data\Excel_data.xlsx")  # importing excel file
+        sheet = book.active  # selecting active sheet../Test_Data/
         list= []
         d={}
         for i in range(1,sheet.max_row+1):        #in excel row number starts from 1.
@@ -28,7 +28,7 @@ class testData:                               #all data belonging to a particula
     # providing data from json.
     @staticmethod
     def jsondata(testcase_name):
-        with open("../Test_Data/Test_Data.json") as file:
+        with open("C:\\Users\Lenovo\.jenkins\workspace\Git_CICD_Python_Selenium\Test_Data\Test_Data.json") as file:
             data =json.load(file)
         test_case_list = data[testcase_name]     #each testcase in json file has dictionary wrapped in list.
         print(test_case_list)
